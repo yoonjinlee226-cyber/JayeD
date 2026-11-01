@@ -5,54 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jessica Damoah | UI/UX Designer</title>
 <style>
-  :root { --gold: #D4AF37; --black: #0a0a0a; --card: #141414; --text: #e8e8e8; }
+  :root { --gold: #D4AF37; --black: #0a0a0a; --card: #141414; --text: #e8e8e8; --muted: #9a9a9a; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { background: var(--black); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; }
-  nav { position: sticky; top: 0; background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--gold); padding: 16px 8%; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
-  nav .logo { color: var(--gold); font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; }
-  nav a { color: var(--text); text-decoration: none; margin-left: 24px; font-size: 0.95rem; }
-  nav a:hover { color: var(--gold); }
-  section { padding: 80px 8%; }
-  h2 { color: var(--gold); font-size: 2rem; margin-bottom: 24px; }
-  .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; }
-  .hero h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); }
-  .hero h1 span { color: var(--gold); }
-  .hero p { max-width: 560px; margin: 20px 0 32px; color: #bbb; font-size: 1.1rem; }
-  .btn { display: inline-block; padding: 12px 28px; border: 2px solid var(--gold); color: var(--gold); text-decoration: none; margin-right: 12px; transition: 0.3s; }
+  body { background: var(--black); color: var(--text); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.7; }
+  a { color: inherit; }
+  nav { position: sticky; top: 0; background: rgba(10,10,10,0.96); border-bottom: 1px solid #2a2a2a; padding: 16px 7%; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+  .logo { color: var(--gold); font-weight: 700; letter-spacing: 1px; }
+  nav .links a { text-decoration: none; margin-left: 20px; font-size: 0.9rem; color: var(--text); }
+  nav .links a:hover { color: var(--gold); }
+  section { padding: 80px 7%; max-width: 1000px; margin: 0 auto; }
+  h2 { color: var(--gold); font-size: 1.8rem; margin-bottom: 20px; }
+  .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; }
+  .tag { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); color: var(--gold); padding: 6px 14px; border-radius: 30px; font-size: 0.85rem; width: fit-content; margin-bottom: 24px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+  .hero h1 { font-size: clamp(2.4rem, 8vw, 4.5rem); line-height: 1.1; }
+  .hero h2.role { color: var(--gold); font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 400; margin: 12px 0 20px; }
+  .hero p { max-width: 540px; color: #bbb; margin-bottom: 30px; }
+  .btn { display: inline-block; padding: 12px 26px; border: 2px solid var(--gold); color: var(--gold); text-decoration: none; margin: 0 10px 10px 0; transition: 0.3s; }
   .btn.solid, .btn:hover { background: var(--gold); color: var(--black); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .card { background: var(--card); border: 1px solid #2a2a2a; border-top: 3px solid var(--gold); padding: 24px; border-radius: 6px; }
-  .card h3 { color: var(--gold); margin-bottom: 8px; }
-  .thumb { height: 160px; background: #1f1f1f; border: 1px dashed var(--gold); display: flex; align-items: center; justify-content: center; color: #777; margin-bottom: 12px; border-radius: 4px; }
-  footer { text-align: center; padding: 30px; border-top: 1px solid var(--gold); color: #888; }
-  @media (max-width: 600px) { nav a { margin-left: 12px; font-size: 0.85rem; } }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .card { background: var(--card); border: 1px solid #2a2a2a; border-top: 3px solid var(--gold); padding: 22px; border-radius: 6px; }
+  .card h3 { color: var(--gold); margin-bottom: 6px; }
+  .card p { color: var(--muted); font-size: 0.95rem; }
+  .soon { text-align: center; padding: 50px 20px; border: 1px dashed var(--gold); border-radius: 8px; }
+  .soon h3 { color: var(--gold); font-size: 1.4rem; margin-bottom: 8px; }
+  .soon p { color: var(--muted); }
+  .socials a { color: var(--gold); text-decoration: none; margin-right: 18px; }
+  .socials a:hover { text-decoration: underline; }
+  footer { text-align: center; padding: 30px; border-top: 1px solid #2a2a2a; color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 600px) { nav .links a { margin-left: 12px; font-size: 0.8rem; } section { padding: 60px 6%; } }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">J.D.</div>
-  <div>
+  <div class="logo">JESSICA DAMOAH</div>
+  <div class="links">
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <section class="hero">
-  <h1>Hi, I'm <span>Jessica Damoah</span></h1>
-  <p>First-year UI/UX design student at Valley View, creating clean, thoughtful designs and eye-catching posters, while learning to code.</p>
+  <div class="tag"><span class="dot"></span>Available for new projects</div>
+  <h1>Jessica Damoah</h1>
+  <h2 class="role">UI/UX Designer</h2>
+  <p>I design clean, easy-to-use interfaces and eye-catching posters, with a growing interest in turning designs into real websites.</p>
   <div>
-    <a class="btn solid" href="#work">View my work</a>
-    <a class="btn" href="#contact">Get in touch</a>
+    <a class="btn solid" href="#projects">View projects</a>
+    <a class="btn" href="#contact">Say hello</a>
   </div>
 </section>
 
 <section id="about">
-  <h2>About Me</h2>
-  <p>I'm a first-year student at Valley View majoring in UI/UX design. I love turning ideas into designs that look good and feel easy to use. Alongside my studies, I make posters in Canva and I'm learning the basics of coding so I can bring my designs to life. I'm still learning, and I'm excited to grow with every project.</p>
+  <h2>About</h2>
+  <p>I’m a first-year student at Valley View, majoring in UI/UX design. I love turning ideas into designs that look good and feel simple to use. I also make posters in Canva and I’m learning to code so I can bring my own designs to life. I’m still growing, and every project teaches me something new.</p>
 </section>
 
+<section id="skills">
+  <h2>What I do</h2>
+  <div class="grid">
+    <div class="card"><h3>UI/UX Design</h3><p>Layouts, user-friendly thinking, and clean visual style.</p></div>
+    <div class="card"><h3>Poster Design</h3><p>Posters and graphics made in Canva.</p></div>
+    <div class="card"><h3>Web Basics</h3><p>Learning HTML and CSS to build my own pages.</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="soon">
+    <h3>Coming soon</h3>
+    <p>My first case studies are on the way. Check back soon.</p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="card">
+    <h3>Valley View</h3>
+    <p>UI/UX Design, first year</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="margin-bottom:18px;">Want to work together or just say hi? Get in touch.</p>
+  <p style="margin-bottom:18px;">your@email.com</p>
+  <div class="socials">
+    <a href="#">LinkedIn</a>
+    <a href="#">Instagram</a>
+    <a href="#">Behance</a>
+  </div>
+</section>
+
+<footer>© 2026 Jessica Damoah</footer>
+
+</body>
+</html>
